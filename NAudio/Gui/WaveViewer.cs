@@ -16,11 +16,24 @@ namespace NAudio.Gui
         /// <summary> 
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.Container components = null;
-        private WaveStream waveStream;
-        private int samplesPerPixel = 128;
-        private long startPosition;
-        private int bytesPerSample;
+        protected System.ComponentModel.Container components = null;
+
+        /// <summary>
+        /// f
+        /// </summary>
+        protected WaveStream waveStream;
+        /// <summary>
+        /// d
+        /// </summary>
+        protected int samplesPerPixel = 128;
+        /// <summary>
+        /// sd
+        /// </summary>
+        protected long startPosition;
+        /// <summary>
+        /// f
+        /// </summary>
+        protected int bytesPerSample;
         /// <summary>
         /// Creates a new WaveViewer control
         /// </summary>
@@ -55,7 +68,7 @@ namespace NAudio.Gui
         /// <summary>
         /// The zoom level, in samples per pixel
         /// </summary>
-        public int SamplesPerPixel
+        public int SamplesPerPixcel
         {
             get
             {
@@ -65,6 +78,17 @@ namespace NAudio.Gui
             {
                 samplesPerPixel = value;
                 this.Invalidate();
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+
+        public int Samples
+        {
+            get
+            {
+                return waveStream == null ? 0 : (int)waveStream.Length / bytesPerSample;
             }
         }
 
